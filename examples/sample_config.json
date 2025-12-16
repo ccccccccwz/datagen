@@ -1,0 +1,36 @@
+{
+  "dir": "./output",
+  "data": [
+    {
+      "name": "user_id",
+      "type": "integer",
+      "value": 1001,
+      "range": "1-1000000",
+      "policy": "边界值"
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "value": "张三",
+      "length": "20",
+      "policy": [
+        "生成随机长度中文字符",
+        "生成超长字符",
+        "生成合法中文姓名"
+      ]
+    },
+    {
+      "name": "birth_date",
+      "type": "date",
+      "value": "2025-12-01",
+      "range": "1950-01-01/2025-12-31",
+      "policy": [
+        "格式错误(YYYYMMDD)",
+        "未来日期",
+        "无效日期(如2月30日)"
+      ]
+    }
+  ],
+  "sum": 10,
+  "sample_strategy": "random"
+}
